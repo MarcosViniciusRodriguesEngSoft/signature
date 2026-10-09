@@ -9,131 +9,207 @@
       background-color: #f4f4f4;
       padding: 40px;
       font-family: Arial, Helvetica, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .btn-copy {
+      background: linear-gradient(135deg, #0A2540, #1E3A5F);
+      color: #fff;
+      border: none;
+      padding: 16px 40px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
+      box-shadow: 0 4px 20px rgba(10, 37, 64, 0.3);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .btn-copy:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 30px rgba(10, 37, 64, 0.5);
+    }
+
+    .btn-copy:active {
+      transform: translateY(0);
+    }
+
+    .btn-copy.copied {
+      background: linear-gradient(135deg, #16a34a, #15803d);
     }
   </style>
 </head>
 
 <body>
 
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0"
-    style="font-family: Arial, Helvetica, sans-serif; color:#333333; line-height:1.4; max-width:650px; background:#ffffff; padding:20px; border-radius:8px;">
-    <tr>
-      <!-- COLUNA 1: FOTO DE PERFIL -->
-      <!-- ⚠️ Se você renomear a foto para "profile.png", use o link abaixo. 
-           Se NÃO renomear, troque "profile.png" por "Marcos%20-%20Formal.png" -->
-      <td style="padding:0 20px 0 0; vertical-align:top; width:110px;">
-        <img
-          src="https://raw.githubusercontent.com/MarcosViniciusRodriguesEngSoft/signature/main/assets/profile/profile.png"
-          width="110" height="110" alt="Marcos Vinicius Rodrigues"
-          style="display:block; border-radius:50%; border:2px solid #00B4D8; object-fit:cover;">
-      </td>
+  <div id="signature-area" style="max-width:800px; font-family: Arial, Helvetica, sans-serif;">
 
-      <!-- COLUNA 2: INFORMAÇÕES -->
-      <td style="vertical-align:top; padding-right:20px; border-right:1px solid #e0e0e0;">
-        <div style="font-size:18px; font-weight:700; color:#0A1128; margin:0 0 4px 0;">Marcos Vinicius Rodrigues</div>
-        <div style="font-size:13px; color:#00B4D8; font-weight:600; margin:0 0 12px 0;">Engenheiro de Software Full
-          Stack | AI Engineering</div>
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0"
+      style="font-family: Arial, Helvetica, sans-serif; color:#333333; line-height:1.4; background:#ffffff; padding:24px; border:1px solid #e0e0e0; border-radius:8px;">
 
-        <div style="font-size:12px; margin:0 0 6px 0;">
-          <span style="color:#666;">📞</span> <a href="tel:+5544998204407"
-            style="color:#0b57d0; text-decoration:none;">+55 44 99820-4407</a>
-        </div>
-        <div style="font-size:12px; margin:0 0 6px 0;">
-          <span style="color:#666;">✉️</span> <a href="mailto:marcos.vinicius.engsof@gmail.com"
-            style="color:#0b57d0; text-decoration:none;">marcos.vinicius.engsof@gmail.com</a>
-        </div>
-        <div style="font-size:12px; margin:0 0 6px 0;">
-          <span style="color:#666;">🌐</span> <a href="https://marcos-vinicius-rodrigues.com.br" target="_blank"
-            style="color:#0b57d0; text-decoration:none;">marcos-vinicius-rodrigues.com.br</a>
-        </div>
-        <div style="font-size:12px; margin:0 0 12px 0;">
-          <span style="color:#666;">📍</span> Sarandi, PR
-        </div>
+      <tr>
+        <!-- COLUNA 1: FOTO -->
+        <td style="padding:0 24px 0 0; vertical-align:top; width:110px;">
+          <img
+            src="https://raw.githubusercontent.com/MarcosViniciusRodriguesEngSoft/signature/main/assets/profile/profile.png"
+            width="110" height="110" alt="Marcos Vinicius Rodrigues"
+            style="display:block; border-radius:50%; border:2px solid #0A2540; object-fit:cover;">
+        </td>
 
-        <!-- TECNOLOGIAS (SVG locais do seu repositório) -->
-        <div
-          style="font-size:12px; font-weight:700; color:#0A1128; margin:0 0 6px 0; text-transform:uppercase; letter-spacing:1px;">
-          Tecnologias</div>
-        <div style="font-size:12px;">
-          <img
-            src="https://raw.githubusercontent.com/MarcosViniciusRodriguesEngSoft/signature/main/assets/technology/react.svg"
-            width="20" height="20" alt="React" style="vertical-align:middle; margin-right:4px;">
-          <img
-            src="https://raw.githubusercontent.com/MarcosViniciusRodriguesEngSoft/signature/main/assets/technology/typescript.svg"
-            width="20" height="20" alt="TypeScript" style="vertical-align:middle; margin-right:4px;">
-          <img
-            src="https://raw.githubusercontent.com/MarcosViniciusRodriguesEngSoft/signature/main/assets/technology/nextjs.svg"
-            width="20" height="20" alt="Next.js" style="vertical-align:middle; margin-right:4px;">
-          <img
-            src="https://raw.githubusercontent.com/MarcosViniciusRodriguesEngSoft/signature/main/assets/technology/java.svg"
-            width="20" height="20" alt="Java" style="vertical-align:middle; margin-right:4px;">
-          <img
-            src="https://raw.githubusercontent.com/MarcosViniciusRodriguesEngSoft/signature/main/assets/technology/spring-boot.svg"
-            width="20" height="20" alt="Spring Boot" style="vertical-align:middle; margin-right:4px;">
-          <img
-            src="https://raw.githubusercontent.com/MarcosViniciusRodriguesEngSoft/signature/main/assets/technology/nestjs.svg"
-            width="20" height="20" alt="NestJS" style="vertical-align:middle; margin-right:4px;">
-          <img
-            src="https://raw.githubusercontent.com/MarcosViniciusRodriguesEngSoft/signature/main/assets/technology/postgresql.svg"
-            width="20" height="20" alt="PostgreSQL" style="vertical-align:middle; margin-right:4px;">
-          <img
-            src="https://raw.githubusercontent.com/MarcosViniciusRodriguesEngSoft/signature/main/assets/technology/mongodb.svg"
-            width="20" height="20" alt="MongoDB" style="vertical-align:middle;">
-        </div>
-      </td>
+        <!-- COLUNA 2: INFORMAÇÕES -->
+        <td style="vertical-align:top; padding-right:24px;">
+          <div style="font-size:18px; font-weight:700; color:#0A2540; margin:0 0 4px 0;">Marcos Vinicius Rodrigues</div>
+          <div style="font-size:13px; color:#4A5568; font-weight:600; margin:0 0 12px 0;">
+            Engenheiro de Software Full Stack | AI Engineering
+          </div>
 
-      <!-- COLUNA 3: REDES SOCIAIS -->
-      <td style="vertical-align:top; padding-left:20px; width:130px;">
-        <div
-          style="font-size:12px; font-weight:700; color:#0A1128; margin:0 0 8px 0; text-transform:uppercase; letter-spacing:1px;">
-          Conecte-se</div>
+          <!-- TELEFONE -->
+          <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:12px; margin-bottom:8px;">
+            <tr>
+              <td style="width:24px; padding-right:8px; vertical-align:middle;">
+                <img src="https://raw.githubusercontent.com/MarcosViniciusRodriguesEngSoft/signature/main/assets/icons/phone.svg" width="24" height="24" alt="Telefone">
+              </td>
+              <td style="vertical-align:middle;">
+                <a href="tel:+5544998204407" style="color:#4A5568; text-decoration:none;">+55 44 99820-4407</a>
+              </td>
+            </tr>
+          </table>
 
-        <!-- LINKEDIN -->
-        <div style="margin:0 0 10px 0;">
-          <a href="https://www.linkedin.com/in/marcosviniciusrodrigues-dev" target="_blank"
-            style="text-decoration:none; display:inline-block;">
-            <img
-              src="https://raw.githubusercontent.com/MarcosViniciusRodriguesEngSoft/signature/main/assets/social/linkedin.svg"
-              width="16" height="16" alt="LinkedIn" style="vertical-align:middle; margin-right:6px;">
-            <span style="color:#0b57d0; font-size:12px; font-weight:600; vertical-align:middle;">LinkedIn</span>
-          </a>
-        </div>
+          <!-- EMAIL -->
+          <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:12px; margin-bottom:8px;">
+            <tr>
+              <td style="width:24px; padding-right:8px; vertical-align:middle;">
+                <img src="https://raw.githubusercontent.com/MarcosViniciusRodriguesEngSoft/signature/main/assets/icons/email.svg" width="24" height="24" alt="Email">
+              </td>
+              <td style="vertical-align:middle;">
+                <a href="mailto:marcos.vinicius.engsof@gmail.com" style="color:#4A5568; text-decoration:none;">marcos.vinicius.engsof@gmail.com</a>
+              </td>
+            </tr>
+          </table>
 
-        <!-- GITHUB -->
-        <div style="margin:0 0 10px 0;">
-          <a href="https://github.com/MarcosViniciusRodriguesEngSoft" target="_blank"
-            style="text-decoration:none; display:inline-block;">
-            <img
-              src="https://raw.githubusercontent.com/MarcosViniciusRodriguesEngSoft/signature/main/assets/social/github.svg"
-              width="16" height="16" alt="GitHub" style="vertical-align:middle; margin-right:6px;">
-            <span style="color:#0b57d0; font-size:12px; font-weight:600; vertical-align:middle;">GitHub</span>
-          </a>
-        </div>
+          <!-- SITE -->
+          <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:12px; margin-bottom:8px;">
+            <tr>
+              <td style="width:24px; padding-right:8px; vertical-align:middle;">
+                <img src="https://raw.githubusercontent.com/MarcosViniciusRodriguesEngSoft/signature/main/assets/icons/globe.svg" width="24" height="24" alt="Site">
+              </td>
+              <td style="vertical-align:middle;">
+                <a href="https://marcos-vinicius-rodrigues.com.br" target="_blank" style="color:#4A5568; text-decoration:none;">marcos-vinicius-rodrigues.com.br</a>
+              </td>
+            </tr>
+          </table>
 
-        <!-- MEDIUM -->
-        <div style="margin:0 0 10px 0;">
-          <a href="https://medium.com/@marcos.vinicius.engsof" target="_blank"
-            style="text-decoration:none; display:inline-block;">
-            <img
-              src="https://raw.githubusercontent.com/MarcosViniciusRodriguesEngSoft/signature/main/assets/social/medium.svg"
-              width="16" height="16" alt="Medium" style="vertical-align:middle; margin-right:6px;">
-            <span style="color:#0b57d0; font-size:12px; font-weight:600; vertical-align:middle;">Medium</span>
-          </a>
-        </div>
+          <!-- LOCAL -->
+          <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="font-size:12px;">
+            <tr>
+              <td style="width:24px; padding-right:8px; vertical-align:middle;">
+                <img src="https://raw.githubusercontent.com/MarcosViniciusRodriguesEngSoft/signature/main/assets/icons/location.svg" width="24" height="24" alt="Localização">
+              </td>
+              <td style="vertical-align:middle;">
+                <span style="color:#4A5568;">Sarandi, PR</span>
+              </td>
+            </tr>
+          </table>
+        </td>
 
-        <!-- WHATSAPP -->
-        <div style="margin:0;">
-          <a href="https://api.whatsapp.com/send/?phone=5544998204407" target="_blank"
-            style="text-decoration:none; display:inline-block;">
-            <img
-              src="https://raw.githubusercontent.com/MarcosViniciusRodriguesEngSoft/signature/main/assets/social/whatsapp.svg"
-              width="16" height="16" alt="WhatsApp" style="vertical-align:middle; margin-right:6px;">
-            <span style="color:#0b57d0; font-size:12px; font-weight:600; vertical-align:middle;">WhatsApp</span>
-          </a>
-        </div>
-      </td>
-    </tr>
-  </table>
+        <!-- COLUNA 3: REDES SOCIAIS -->
+        <td style="vertical-align:top; padding-left:24px; width:130px; border-left:1px solid #e0e0e0;">
+          <div style="font-size:12px; font-weight:700; color:#0A2540; margin:0 0 8px 0; text-transform:uppercase; letter-spacing:1px;">
+            Conecte-se</div>
+
+          <div style="margin:0 0 10px 0;">
+            <a href="https://www.linkedin.com/in/marcosviniciusrodrigues-dev" target="_blank" style="text-decoration:none; display:inline-block;">
+              <img src="https://raw.githubusercontent.com/MarcosViniciusRodriguesEngSoft/signature/main/assets/social/linkedin.svg" width="16" height="16" alt="LinkedIn" style="vertical-align:middle; margin-right:6px;">
+              <span style="color:#4A5568; font-size:12px; font-weight:600; vertical-align:middle;">LinkedIn</span>
+            </a>
+          </div>
+
+          <div style="margin:0 0 10px 0;">
+            <a href="https://github.com/MarcosViniciusRodriguesEngSoft" target="_blank" style="text-decoration:none; display:inline-block;">
+              <img src="https://raw.githubusercontent.com/MarcosViniciusRodriguesEngSoft/signature/main/assets/social/github.svg" width="16" height="16" alt="GitHub" style="vertical-align:middle; margin-right:6px;">
+              <span style="color:#4A5568; font-size:12px; font-weight:600; vertical-align:middle;">GitHub</span>
+            </a>
+          </div>
+
+          <div style="margin:0 0 10px 0;">
+            <a href="https://medium.com/@marcos.vinicius.engsof" target="_blank" style="text-decoration:none; display:inline-block;">
+              <img src="https://raw.githubusercontent.com/MarcosViniciusRodriguesEngSoft/signature/main/assets/social/medium.svg" width="16" height="16" alt="Medium" style="vertical-align:middle; margin-right:6px;">
+              <span style="color:#4A5568; font-size:12px; font-weight:600; vertical-align:middle;">Medium</span>
+            </a>
+          </div>
+
+          <div style="margin:0;">
+            <a href="https://api.whatsapp.com/send/?phone=5544998204407" target="_blank" style="text-decoration:none; display:inline-block;">
+              <img src="https://raw.githubusercontent.com/MarcosViniciusRodriguesEngSoft/signature/main/assets/social/whatsapp.svg" width="16" height="16" alt="WhatsApp" style="vertical-align:middle; margin-right:6px;">
+              <span style="color:#4A5568; font-size:12px; font-weight:600; vertical-align:middle;">WhatsApp</span>
+            </a>
+          </div>
+        </td>
+      </tr>
+
+    </table>
+
+  </div>
+
+  <button class="btn-copy" id="btnCopy" onclick="copiarAssinatura()">
+    📋 Copiar Assinatura
+  </button>
+
+  <script>
+    async function copiarAssinatura() {
+      const btn = document.getElementById('btnCopy');
+      const area = document.getElementById('signature-area');
+
+      try {
+        const range = document.createRange();
+        range.selectNode(area);
+        const selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+
+        await navigator.clipboard.write([
+          new ClipboardItem({
+            'text/html': new Blob([area.innerHTML], { type: 'text/html' }),
+            'text/plain': new Blob([area.innerText], { type: 'text/plain' })
+          })
+        ]);
+
+        btn.classList.add('copied');
+        btn.textContent = '✅ Assinatura Copiada!';
+        setTimeout(() => {
+          btn.classList.remove('copied');
+          btn.textContent = '📋 Copiar Assinatura';
+        }, 3000);
+
+        selection.removeAllRanges();
+      } catch (error) {
+        try {
+          const range = document.createRange();
+          range.selectNode(area);
+          const selection = window.getSelection();
+          selection.removeAllRanges();
+          selection.addRange(range);
+          document.execCommand('copy');
+          selection.removeAllRanges();
+
+          btn.classList.add('copied');
+          btn.textContent = '✅ Assinatura Copiada!';
+          setTimeout(() => {
+            btn.classList.remove('copied');
+            btn.textContent = '📋 Copiar Assinatura';
+          }, 3000);
+        } catch (e) {
+          alert('Não foi possível copiar. Selecione manualmente com Ctrl+A e Ctrl+C.');
+        }
+      }
+    }
+  </script>
 
 </body>
 
