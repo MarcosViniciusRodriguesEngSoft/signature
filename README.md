@@ -4,8 +4,7 @@
 
 **Assinatura profissional em HTML para e-mail, com design moderno e links funcionais.**
 
-[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/MarcosViniciusRodriguesEngSoft)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/pt-BR/docs/Web/HTML) [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/pt-BR/docs/Web/CSS) [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/MarcosViniciusRodriguesEngSoft)
 
 </div>
 
@@ -13,12 +12,25 @@
 
 ## 📋 Sobre
 
-Este repositório contém os assets e o código HTML da minha assinatura de e-mail profissional. Foi desenvolvido para ser:
+Código HTML e assets da minha assinatura de e-mail profissional. Ela foi escrita para funcionar bem em clientes de e-mail, que suportam bem menos HTML/CSS que um navegador:
 
-- ✅ **Compatível** com Gmail, Outlook e outros clientes de e-mail
-- ✅ **Responsivo** em desktop e mobile
-- ✅ **Clicável** — todos os links de contato e redes sociais são funcionais
-- ✅ **Versionado** — fácil de manter e atualizar
+- ✅ **Layout em tabelas e estilos inline**, o formato mais aceito por Gmail e Outlook
+- ✅ **Imagens em PNG**, porque SVG é bloqueado por vários clientes de e-mail
+- ✅ **Foto já recortada em círculo** no próprio arquivo, sem depender de `border-radius`
+- ✅ **Clicável** — telefone, e-mail, site e redes sociais são links
+- ✅ **Botão "Copiar Assinatura"** que copia só a assinatura, pronta para colar
+
+> As imagens são carregadas por URL pública do GitHub (`raw.githubusercontent.com`). Por isso os arquivos de `assets/` precisam estar na branch `main` do repositório.
+
+---
+
+## 🖼️ Prévia
+
+<div align="center">
+
+<img src="assets/preview/signature.png" alt="Prévia da assinatura de e-mail" width="620">
+
+</div>
 
 ---
 
@@ -27,23 +39,17 @@ Este repositório contém os assets e o código HTML da minha assinatura de e-ma
 ```
 signature/
 ├── assets/
+│   ├── preview/
+│   │   └── signature.png        # Captura da assinatura (usada no README)
 │   ├── profile/
-│   │   └── profile.png          # Foto de perfil
-│   ├── social/
-│   │   ├── github.svg           # Ícone do GitHub
-│   │   ├── linkedin.svg         # Ícone do LinkedIn
-│   │   ├── medium.svg           # Ícone do Medium
-│   │   └── whatsapp.svg         # Ícone do WhatsApp
-│   └── technology/
-│       ├── java.svg             # Ícone do Java
-│       ├── mongodb.svg          # Ícone do MongoDB
-│       ├── nestjs.svg           # Ícone do NestJS
-│       ├── nextjs.svg           # Ícone do Next.js
-│       ├── postgresql.svg       # Ícone do PostgreSQL
-│       ├── react.svg            # Ícone do React
-│       ├── spring-boot.svg      # Ícone do Spring Boot
-│       └── typescript.svg       # Ícone do TypeScript
-├── signature.html               # Código HTML da assinatura
+│   │   ├── profile.png          # Foto original
+│   │   └── profile-circle.png   # Foto recortada em círculo (usada na assinatura)
+│   ├── icons/                   # Ícones de contato (.png usados, .svg são a fonte)
+│   │   ├── phone / email / globe / location
+│   ├── social/                  # Ícones de redes sociais (.png usados, .svg são a fonte)
+│   │   ├── linkedin / github / medium / whatsapp / email
+│   └── technology/              # Ícones de tecnologias (não usados na assinatura)
+├── signature.html               # Assinatura + botão de copiar
 └── README.md                    # Este arquivo
 ```
 
@@ -56,23 +62,29 @@ signature/
    git clone https://github.com/MarcosViniciusRodriguesEngSoft/signature.git
    ```
 
-2. **Abra o arquivo `signature.html` no navegador:**
-   - Dê um duplo clique no arquivo, ou
-   - Use uma extensão como *Live Server* no VS Code.
+2. **Abra o `signature.html` no navegador** (duplo clique ou *Live Server* no VS Code).
 
-3. **Copie o visual renderizado:**
-   - Selecione tudo na página (`Ctrl + A`)
-   - Copie (`Ctrl + C`)
+3. **Clique em "Copiar Assinatura".** Se o botão falhar, selecione a assinatura e copie com `Ctrl + C`.
 
-4. **Cole na assinatura do Gmail:**
-   - Vá em **Configurações** → **Ver todas as configurações** → **Geral** → **Assinatura**
-   - Cole (`Ctrl + V`) e salve.
+4. **Cole no seu cliente de e-mail:**
+   - **Gmail:** Configurações → Ver todas as configurações → Geral → Assinatura → `Ctrl + V` e salvar.
+   - **Outlook:** Configurações → Contas → Assinaturas → `Ctrl + V` e salvar.
 
-> ⚠️ **Importante:** Não cole o código HTML diretamente no Gmail. Cole o **visual renderizado** (o resultado final que aparece no navegador).
+> ⚠️ **Importante:** cole o **visual renderizado**, nunca o código HTML.
 
 ---
 
-## 🛠️ Tecnologias
+## ✏️ Como editar
+
+- **Dados de contato e links:** edite diretamente o `signature.html`.
+- **Foto:** troque `assets/profile/profile.png` e gere novamente a versão circular (`profile-circle.png`), quadrada e com fundo branco.
+- **Ícones:** mantenha os PNGs com 2x o tamanho exibido (64 px para 20 px) para ficarem nítidos em telas de alta densidade.
+- Depois de qualquer mudança em `assets/`, faça o push para a `main`, senão as imagens não aparecem no e-mail.
+
+---
+
+<!--
+## 🛠️ Stack
 
 <div align="center">
 
@@ -88,8 +100,7 @@ signature/
 | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="30"> | MongoDB |
 
 </div>
-
----
+-->
 
 ## 🔗 Links
 
@@ -105,7 +116,7 @@ signature/
 
 **Desenvolvido por [Marcos Vinicius Rodrigues](https://github.com/MarcosViniciusRodriguesEngSoft)**
 
-*Engenheiro de Software Full Stack | AI Engineering*
+*Software Engineer | AI Engineering*
 
 ⭐ Se este projeto te ajudou de alguma forma, considere dar uma estrela!
 
